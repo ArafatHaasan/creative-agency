@@ -1,7 +1,13 @@
+import Footer from './components/Shared/Footer'
+import Navbar from './components/Shared/Navbar'
+import Home from './pages/Home/Home'
+
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">are you connected?</h1>
+      <Navbar></Navbar>
+      <Home></Home>
+      <Footer></Footer>
     </div>
   )
 }
