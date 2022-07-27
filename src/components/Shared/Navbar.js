@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import Brandlogo from './../../assets/logos/logo.png'
 import { HiMenu } from 'react-icons/hi'
 import { FaTimes } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import UseAuth from '../../Context/UseAuth'
+
 const Navbar = () => {
+  const { Logout, user } = UseAuth()
+
   const [Toogle, setToogle] = useState(false)
 
   const toogle = () => {
     setToogle(!Toogle)
-    console.log(Toogle)
   }
 
   return (
@@ -27,13 +31,30 @@ const Navbar = () => {
 
         <div className="nav_manu hidden md:block">
           <ul className="list-none flex justify-between">
-            <li className="px-2 mr-8 font-semibold cursor-pointer">Home</li>
+            <li className="px-2 mr-8 font-semibold cursor-pointer">
+              <Link to={'/'}> Home </Link>
+            </li>
             <li className="px-2 mr-8 font-semibold cursor-pointer whitespace-nowrap">
               Contact Us
             </li>
             <li className="px-2 mr-8 font-semibold cursor-pointer">Works</li>
-            <li className="px-2 mr-8 font-semibold cursor-pointer">Feature</li>
-            <li className="px-2 mr-8 font-semibold cursor-pointer">login</li>
+            <li className="px-2 mr-8 font-semibold cursor-pointer">
+              {' '}
+              <Link to={'dashbord'}>Dashbord</Link>{' '}
+            </li>
+
+            {user?.email ? (
+              <button
+                onClick={Logout}
+                className="bg-slate-900 font-semibold px-4  text-white rounded py-1 "
+              >
+                Logout
+              </button>
+            ) : (
+              <li className="px-2 mr-8 font-semibold cursor-pointer">
+                <Link to={'login'}> Login</Link>
+              </li>
+            )}
           </ul>
         </div>
 
@@ -49,7 +70,9 @@ const Navbar = () => {
               Contact Us
             </li>
             <li className="px-2 my-4 font-semibold cursor-pointer">Works</li>
-            <li className="px-2 my-4 font-semibold cursor-pointer ">Feature</li>
+            <li className="px-2 my-4 font-semibold cursor-pointer ">
+              Dashbord
+            </li>
             <li className="px-2 my-4 font-semibold cursor-pointer">login</li>
           </ul>
         </div>

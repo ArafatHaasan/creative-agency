@@ -1,9 +1,14 @@
 import React from 'react'
 import bannerImage from '../assets/logos/Frame.png'
 import Button from './Button'
+import '.././index'
 const Banner = () => {
+  const style = {
+    border: {},
+  }
+
   return (
-    <div className="bg-yellow-300 h-screen flex md:mt-[-100px] px-3 justify-center">
+    <div className="bg-yellow-300 flex items-center h-screen first-letter:flex md:mt-[-100px] px-3 justify-center">
       {/* container  */}
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center ">
         <div>
