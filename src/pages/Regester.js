@@ -21,7 +21,6 @@ const Regester = () => {
   })
 
   const LoginWithGoogle = () => {
-    console.log('take me')
     GoogleSign()
       .then((result) => {
         const user = result.user
@@ -32,7 +31,6 @@ const Regester = () => {
       .catch((error) => {
         const errorMessage = error.message
         setError(errorMessage)
-        // console.log(errorMessage)
       })
   }
 
@@ -53,7 +51,7 @@ const Regester = () => {
       .then((result) => {
         // setUser(result)
         updateUser(displayName)
-        console.log("i'm back")
+
         setquery({ displayName: '', email: '', password: '' })
         navigate(prevLocation)
       })

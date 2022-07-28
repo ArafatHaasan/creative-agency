@@ -20,23 +20,25 @@ const RequsetForService = () => {
   const Submitform = (e) => {
     e.preventDefault()
 
-    axios.post('http://localhost:5000/order', query).then((res) => {
-      if (res.data.acknowledged) {
-        swal({
-          title: 'Good job!',
-          text: 'You clicked the button!',
-          icon: 'success',
-          button: 'Aww yiss!',
-        })
-        setquery({
-          name: '',
-          email: '',
-          service: '',
-          details: '',
-          state: '',
-        })
-      }
-    })
+    axios
+      .post('https://polar-waters-43259.herokuapp.com/order', query)
+      .then((res) => {
+        if (res.data.acknowledged) {
+          swal({
+            title: 'Good job!',
+            text: 'You clicked the button!',
+            icon: 'success',
+            button: 'Aww yiss!',
+          })
+          setquery({
+            name: '',
+            email: '',
+            service: '',
+            details: '',
+            state: '',
+          })
+        }
+      })
   }
 
   return (

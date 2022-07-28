@@ -21,10 +21,8 @@ function App() {
       <Routes>
         {/* <Route path=':serviceId'   element={ <PrivateRoute>  </PrivateRoute> } ></Route> */}
         <Route path="/" element={<Home />}></Route>
-        {/* <Route path="home" element={<Home />}></Route> */}
-        <Route path="home">
-          <Route path="home:serviceId" element={<ServiceDetails />}></Route>
-        </Route>
+        <Route path="home" element={<Home />}></Route>
+        <Route path="/home/:serviceId" element={<ServiceDetails />}></Route>
 
         <Route
           path="dashbord"

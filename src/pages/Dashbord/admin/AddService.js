@@ -16,16 +16,18 @@ const AddService = () => {
   const formSubmit = (e) => {
     e.preventDefault()
 
-    axios.post('http://localhost:5000/services', Formdate).then((res) => {
-      if (res.data.acknowledged) {
-        swal({
-          title: 'Good job!',
-          text: 'You clicked the button!',
-          icon: 'success',
-          button: 'Aww yiss!',
-        })
-      }
-    })
+    axios
+      .post('https://polar-waters-43259.herokuapp.com/services', Formdate)
+      .then((res) => {
+        if (res.data.acknowledged) {
+          swal({
+            title: 'Good job!',
+            text: 'You clicked the button!',
+            icon: 'success',
+            button: 'Aww yiss!',
+          })
+        }
+      })
 
     document.getElementById('titleInput').value = ''
     document.getElementById('Descinput').value = ''

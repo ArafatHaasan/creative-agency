@@ -8,7 +8,7 @@ const Banner = () => {
   }
 
   return (
-    <div className="bg-yellow-300 flex items-center h-screen first-letter:flex md:mt-[-100px] px-3 justify-center">
+    <div className=" flex items-center banner  px-3 justify-center">
       {/* container  */}
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center ">
         <div>

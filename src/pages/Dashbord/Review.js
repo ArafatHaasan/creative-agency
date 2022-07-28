@@ -20,7 +20,7 @@ const Review = () => {
   const SubmitForm = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:5000/review', query)
+      .post('https://polar-waters-43259.herokuapp.com/review', query)
 
       .then((res) => {
         if (res.data.acknowledged) {

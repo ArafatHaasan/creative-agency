@@ -14,17 +14,19 @@ const MakeAdmin = () => {
   const formSubmit = (e) => {
     e.preventDefault()
 
-    axios.put('http://localhost:5000/users', Query).then((res) => {
-      res.data.acknowledged &&
-        swal({
-          title: 'Good!',
-          text: 'You successfully made an admin!',
-          icon: 'success',
-          button: 'hm.',
-        })
+    axios
+      .put('https://polar-waters-43259.herokuapp.com/users', Query)
+      .then((res) => {
+        res.data.acknowledged &&
+          swal({
+            title: 'Good!',
+            text: 'You successfully made an admin!',
+            icon: 'success',
+            button: 'hm.',
+          })
 
-      setQuery({ email: '' })
-    })
+        setQuery({ email: '' })
+      })
   }
 
   return (

@@ -5,7 +5,7 @@ const OrderedService = () => {
   const [Service, setService] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/order')
+    fetch('https://polar-waters-43259.herokuapp.com/order')
       .then((res) => res.json())
       .then((data) => setService(data))
   }, [])

@@ -14,7 +14,9 @@ const ServiceRow = ({ Rservice }) => {
 
     // useEffect(() => {
     axios
-      .put(`http://localhost:5000/order?state=${value}&id=${id}`)
+      .put(
+        `https://polar-waters-43259.herokuapp.com/order?state=${value}&id=${id}`,
+      )
       .then((res) => {
         if (res.data.acknowledged) {
           swal({
@@ -29,7 +31,6 @@ const ServiceRow = ({ Rservice }) => {
   }
 
   const { email, name, service, state, details, _id } = Rservice
-  console.log(state)
 
   return (
     <tr>

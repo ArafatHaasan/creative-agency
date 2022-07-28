@@ -11,7 +11,6 @@ const Dasbord = () => {
 
   const Toogle = () => {
     setdashbordToogle(!dashbordToogle)
-    console.log(dashbordToogle)
   }
 
   const { user, isAdmin } = UseAuth()

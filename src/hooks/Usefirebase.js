@@ -74,7 +74,7 @@ const Usefirebase = () => {
   const saveUser = (name, email) => {
     const user = { name, email }
     axios
-      .post('http://localhost:5000/users', user)
+      .post('https://polar-waters-43259.herokuapp.com/users', user)
       .then((res) => console.log(res.data))
       .catch((error) => setError(error.message))
   }
@@ -82,11 +82,13 @@ const Usefirebase = () => {
   //  admin cheacker
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/users/${user?.email}`).then((res) => {
-      if (res?.data?.role === 'admin') {
-        setIsAdmin(true)
-      }
-    })
+    axios
+      .get(`https://polar-waters-43259.herokuapp.com/users/${user?.email}`)
+      .then((res) => {
+        if (res?.data?.role === 'admin') {
+          setIsAdmin(true)
+        }
+      })
   }, [user])
 
   // logOut func

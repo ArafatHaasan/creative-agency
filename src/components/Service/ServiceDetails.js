@@ -7,11 +7,10 @@ import Service from '../Service/Services'
 const ServiceDetails = () => {
   const { serviceId } = useParams()
   console.log(serviceId)
-
   const [service, setService] = useState({})
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`https://polar-waters-43259.herokuapp.com/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data))
   }, [serviceId])

@@ -15,8 +15,8 @@ const Navbar = () => {
   }
 
   return (
-    <div className="relative">
-      <nav className="flex flex-col md:flex-row  py-2 justify-between  items-center md:container mx-auto">
+    <div className="relative bg-yellow-300 ">
+      <nav className="flex flex-col  md:flex-row  py-2 justify-between  items-center md:container mx-auto">
         <div className={Toogle ? 'hidden' : 'block'}>
           <img style={{ width: '30%' }} src={Brandlogo} alt="Brand logo" />
         </div>

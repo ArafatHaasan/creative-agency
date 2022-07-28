@@ -16,7 +16,7 @@ const SingleServices = ({ EveryService }) => {
         <h2 className="text-2xl font-bold ">{title}</h2>
         <p>{Desc}</p>
         <button className="px-4 py-2 w-42 m-auto bg-slate-700 font-semibold text-white rounded">
-          <Link to={`home/${_id}`}> Explore More </Link>
+          <Link to={`/home/${_id}`}> Explore More </Link>
         </button>
       </div>
     </div>

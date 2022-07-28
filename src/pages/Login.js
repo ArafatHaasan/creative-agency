@@ -28,7 +28,7 @@ const Login = () => {
     OldUser(email, password)
       .then((res) => {
         const user = res.user
-        console.log(user)
+       
         updateUser(user.displayName)
         setquery({
           email: '',
