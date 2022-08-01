@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Service from '../Service/Services'
+import servicepic from '../../assets/carousel-5.png'
 
 const ServiceDetails = () => {
   const { serviceId } = useParams()
@@ -16,22 +16,26 @@ const ServiceDetails = () => {
   }, [serviceId])
 
   return (
-    <div>
-      <div className="mx-auto h-screen flex justify-center items-center w-2/4">
-        <div className="flex space-x-5 p-5 items-center">
+    <div className="py-4">
+      <div className="mx-auto h-screen shadow-lg flex flex-col  px-2   w-2/4">
+        <div className="flex flex-col ">
           <div>
-            <img src="" alt="" />
-            <h1>title</h1>
-          </div>
+            <img src={servicepic} alt="service" />
+            <h1 className="text-xl py-3 font-semibold text-gray-500">
+              {service?.title}
+            </h1>
 
-          <div>
-            <p>
+            <p className="pb-2">{service.Desc}</p>
+
+            <p className="pb-4">
               {' '}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              commodi, autem, quis pariatur corporis adipisci id repellat sunt
-              ab totam provident dicta, impedit quidem molestias iusto assumenda
-              inventore accusamus atque consequuntur voluptate consequatur
-              tenetur at? Omnis nulla vero nostrum.{' '}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              odit minima voluptatibus, eligendi molestiae quasi libero maiores
+              possimus tempora dicta quia molestias veniam atque magnam ullam,
+              quod ratione corporis reiciendis praesentium repellendus provident
+              ea voluptate! Vitae animi sit magni nulla? Reiciendis, excepturi
+              consectetur et laboriosam delectus voluptas alias corrupti
+              perspiciatis.{' '}
             </p>
             <div>
               <form action="mailto:someone@example.com">

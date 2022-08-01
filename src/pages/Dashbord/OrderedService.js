@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Service1 from '../../assets/icons/service1.png'
+
+
+
+
+
 import EveryOrderedService from './EveryOrderedService'
 const OrderedService = () => {
   const [Service, setService] = useState([])

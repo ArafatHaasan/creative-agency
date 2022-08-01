@@ -3,25 +3,40 @@ import React, { useState } from 'react'
 import swal from 'sweetalert'
 
 const RequsetForService = () => {
-  const [query, setquery] = useState({
-    name: '',
-    email: '',
-    service: '',
-    details: '',
-    state: 'requested',
-  })
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [service, setService] = useState('')
+  const [details, setDetails] = useState('')
+  const [state, setState] = useState('requested')
+  const [image, setImage] = useState(null)
 
-  const ValueChanger = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    setquery({ ...query, [name]: value })
-  }
+  // const [query, setquery] = useState({
+  //   name: '',
+  //   email: '',
+  //   service: '',
+  //   details: '',
+  //   state: 'requested',
+  // })
+
+  const formData = new FormData()
+  formData.append('name', name)
+  formData.append('email', email)
+  formData.append('service', service)
+  formData.append('details', details)
+  formData.append('state', state)
+  formData.append('image', image)
+
+  // const ValueChanger = (e) => {
+  //   const name = e.target.name
+  //   const value = e.target.value
+  //   setquery({ ...query, [name]: value })
+  // }
 
   const Submitform = (e) => {
     e.preventDefault()
-
+    console.log(formData)
     axios
-      .post('https://polar-waters-43259.herokuapp.com/order', query)
+      .post('https://polar-waters-43259.herokuapp.com/order', formData)
       .then((res) => {
         if (res.data.acknowledged) {
           swal({
@@ -30,13 +45,12 @@ const RequsetForService = () => {
             icon: 'success',
             button: 'Aww yiss!',
           })
-          setquery({
-            name: '',
-            email: '',
-            service: '',
-            details: '',
-            state: '',
-          })
+
+          document.getElementById('image').value = ''
+          document.getElementById('name').value = ''
+          document.getElementById('email').value = ''
+          document.getElementById('details').value = ''
+          document.getElementById('service').value = ''
         }
       })
   }
@@ -46,39 +60,46 @@ const RequsetForService = () => {
       <div className="p-6 max-w-[500px]">
         <form onSubmit={Submitform}>
           <input
-            value={query.name}
+            id="name"
             className="my-2 p-2 block border-2 w-full  rounded"
             type="text"
             name="name"
             placeholder="Your Name / Company's Name "
-            onChange={ValueChanger}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
-            value={query.email}
+            id="email"
             className="my-2 block w-full p-2 border-2  rounded"
             type="email"
             placeholder="Your email address"
-            onChange={ValueChanger}
+            onChange={(e) => setEmail(e.target.value)}
             name="email"
           />
           <input
+            id="service"
             className="my-2 block w-full p-2 border-2  rounded"
             type="Text"
             name="service"
-            value={query.service}
             placeholder="Graphic Design"
-            onChange={ValueChanger}
+            onChange={(e) => setService(e.target.value)}
           />
           <textarea
             className="my-2 w-full p-2 block border-2  rounded"
             name="details"
-            value={query.details}
-            id=""
+            id="details"
             cols="50"
             rows="10"
             placeholder="Project Details"
-            onChange={ValueChanger}
+            onChange={(e) => setDetails(e.target.value)}
           ></textarea>
+
+          <input
+            id="image"
+            className="my-2 w-full p-2 block border-2 bg-white rounded"
+            type="file"
+            name="image"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
           <input
             className="bg-slate-900 cursor-pointer text-white px-5 py-2 rounded-md"
             type="submit"

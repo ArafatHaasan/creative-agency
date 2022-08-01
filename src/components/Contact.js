@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Contact = () => {
   return (
-    <div className="h-screen bg-yellow-300 md:mb-[-100px]  flex justify-center items-start">
+    <div className="h-[80%] bg-yellow-300  flex justify-center items-start">
       <div className="container pt-8 px-2 md:px-0 mx-auto">
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex flex-col space-y-4">

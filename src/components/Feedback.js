@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import costomer1 from '../assets/customer-1.png'
 import EverySingleFeedBack from './Shared/EverySingleFeedBack'
 
 const Feedback = () => {

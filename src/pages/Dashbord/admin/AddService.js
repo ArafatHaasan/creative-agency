@@ -26,12 +26,12 @@ const AddService = () => {
             icon: 'success',
             button: 'Aww yiss!',
           })
+
+          document.getElementById('titleInput').value = ''
+          document.getElementById('Descinput').value = ''
+          document.getElementById('fileinput').value = ''
         }
       })
-
-    document.getElementById('titleInput').value = ''
-    document.getElementById('Descinput').value = ''
-    document.getElementById('fileinput').value = ''
   }
 
   return (

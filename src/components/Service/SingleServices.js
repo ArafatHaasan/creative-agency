@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import services1 from '../../assets/icons/service1.png'
 
 const SingleServices = ({ EveryService }) => {
   const { picture, Desc, title, _id } = EveryService
 
   return (
-    <div className="text-center shadow-2xl p-4 rounded-md cursor-pointer ">
+    // <div className="grid items md:grid-cols-3 gap-4">
+    <div
+      className="text-center mr-3
+     shadow-2xl p-4 rounded-md cursor-pointer "
+    >
       <div className="flex flex-col space-y-4 ">
         <img
           style={{ width: '20%', margin: 'auto' }}
@@ -20,6 +23,7 @@ const SingleServices = ({ EveryService }) => {
         </button>
       </div>
     </div>
+    // </div>
   )
 }
 

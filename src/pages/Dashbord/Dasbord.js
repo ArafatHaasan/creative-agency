@@ -1,9 +1,7 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { Link, Outlet } from 'react-router-dom'
 import DashbordField from '../../components/DashbordField'
-import DashbordManu from '../../components/DashbordManu'
 import UseAuth from '../../Context/UseAuth'
 
 const Dasbord = () => {
@@ -13,7 +11,7 @@ const Dasbord = () => {
     setdashbordToogle(!dashbordToogle)
   }
 
-  const { user, isAdmin } = UseAuth()
+  const { isAdmin } = UseAuth()
 
   return (
     <div className="absolute top-0 w-full h-screen overflow-hidden">
@@ -28,7 +26,7 @@ const Dasbord = () => {
           >
             <div className="h-[74px] flex justify-between border-b-2 border-stone-800">
               <h1 className="py-4 px-2.5 text-2xl md:text-4xl font-bold">
-                Dashbord
+                <Link to={'/'}> Dashbord </Link>
               </h1>
               <FaTimes
                 onClick={Toogle}

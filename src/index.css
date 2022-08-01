@@ -9,3 +9,10 @@
     background-color: #FDE047;
     clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
 }
+.workBg {
+
+    height: 100vh; 
+    width: 100%;
+    background-color: #0F172A;
+    clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
+}

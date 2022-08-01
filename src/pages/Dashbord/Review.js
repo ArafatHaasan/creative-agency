@@ -1,14 +1,15 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
-import placeholderImg from '../../assets/placeholder (2).jpg'
 import swal from 'sweetalert'
+import UseAuth from '../../Context/UseAuth'
 
 const Review = () => {
+  const { user } = UseAuth()
   const [query, setQuery] = useState({
-    name: '',
+    name: user?.displayName,
     Message: '',
-    picture: placeholderImg,
+    designation: 'Employee',
   })
 
   const TextChanger = (e) => {
